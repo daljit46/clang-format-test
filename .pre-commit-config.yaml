@@ -1,0 +1,10 @@
+default_language_version:
+  python: python3
+repos:
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: 4fa6f82d0118d7c941b352fd2ee1ba94976d3368
+    hooks:
+      - id: clang-format
+        name: clang-format
+        types_or: [c++]
+        language: python
