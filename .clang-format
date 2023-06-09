@@ -1,1 +1,4 @@
 BasedOnStyle: LLVM
+BinPackParameters: false
+PackConstructorInitializers: NextLine
+ColumnLimit: 100
