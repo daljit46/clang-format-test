@@ -22,9 +22,9 @@
 #define baar(y, z) (y + z)
 
 // AlignEscapedNewlines
-#define PPP                                                                    \
-  int aaaa;                                                                    \
-  int b;                                                                       \
+#define PPP                                                                                        \
+  int aaaa;                                                                                        \
+  int b;                                                                                           \
   int dddddddddd;
 
 namespace LevelOneNamespace {
@@ -40,8 +40,7 @@ struct AAAAAAAAAAAAAAAAAAAA {
 // AlwaysBreakTemplateDeclarations
 template <typename T> T foo() {}
 
-template <typename T>
-T foo(int aaaaaaaaaaaaaaaaaaaaa, int bbbbbbbbbbbbbbbbbbbbb) {}
+template <typename T> T foo(int aaaaaaaaaaaaaaaaaaaaa, int bbbbbbbbbbbbbbbbbbbbb) {}
 
 // AllowShortEnumsOnASingleLine
 enum : unsigned int { AA = 0, BB } myEnum;
@@ -50,8 +49,7 @@ enum : unsigned int { AA = 0, BB } myEnum;
 class B : public E {
 private:
   // AlignArrayOfStructures
-  struct AAAAAAAAAAAAAAAAAAAA test[3] = {
-      {56, 23, "hello"}, {-1, 93463, "world"}, {7, 5, "!!"}};
+  struct AAAAAAAAAAAAAAAAAAAA test[3] = {{56, 23, "hello"}, {-1, 93463, "world"}, {7, 5, "!!"}};
 
   // AlignTrailingComments, AlignConsecutiveDeclarations, QualifierOrder,
   // QualifierAlignment, AlignTrailingComments
@@ -93,8 +91,7 @@ public:
   }
 
   // AllowAllParametersOfDeclarationOnNextLine BinPackParameters
-  int myFunction(int aaaaaaaaaaaaa, int bbbbbbbbbbbbbbbbbbbbbbb,
-                 int ccccccccccccc, int d, int e) {
+  int myFunction(int aaaaaaaaaaaaa, int bbbbbbbbbbbbbbbbbbbbbbb, int ccccccccccccc, int d, int e) {
     int myvar = aaaaaaaaaaaaa / 10;
     long anothervaw = d % 2;
     // comment
@@ -121,21 +118,18 @@ public:
 
   // AlignAfterOpenBracket, BinPackParameters,
   void loooonFunctionIsVeryLongButNotAsLongAsJavaTypeNames(
-      std::vector<AAAAAAAAAAAAAAAAAAAA> const &inputVector,
-      std::map<int, std::string> *outputMap) {
+      std::vector<AAAAAAAAAAAAAAAAAAAA> const &inputVector, std::map<int, std::string> *outputMap) {
     std::vector<AAAAAAAAAAAAAAAAAAAA> bar;
-    std::copy_if(inputVector.begin(), inputVector.end(),
-                 std::back_inserter(bar), &shortFilter);
+    std::copy_if(inputVector.begin(), inputVector.end(), std::back_inserter(bar), &shortFilter);
     // AllowShortLambdasOnASingleLine
-    std::sort(inputVector.begin(), inputVector.end(),
-              [](auto v) { return v.a < v.b; });
-    std::transform(inputVector.begin(), inputVector.end(),
+    std::sort(inputVector.begin(), inputVector.end(), [](auto v) { return v.a < v.b; });
+    std::transform(inputVector.begin(),
+                   inputVector.end(),
                    std::inserter(*outputMap, outputMap->end()),
                    [](const AAAAAAAAAAAAAAAAAAAA &element) {
                      // LambdaBodyIndentation
-                     return std::make_pair(
-                         element.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,
-                         element.cccccccccccccccccc);
+                     return std::make_pair(element.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,
+                                           element.cccccccccccccccccc);
                    });
   };
   int notInline(AAAAAAAAAAAAAAAAAAAA *v);
@@ -164,19 +158,19 @@ int main() {
   bbbbbbbbbbb = 5;
   ppppppppppp = 10;
   LevelOneNamespace::LevelTwoNamespace::B b{
-      1, 3, 4,
+      1,
+      3,
+      4,
       // SpaceBeforeCpp11BracedList
-      std::vector<std::string>{"aaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbb",
-                               "cccccccccccccccccccccccccccc"}};
+      std::vector<std::string>{
+          "aaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbb", "cccccccccccccccccccccccccccc"}};
   // AllowShortLoopsOnASingleLine
   for (int i = 0; i < 10; i++)
     cout << i;
-  LevelOneNamespace::LevelTwoNamespace::AAAAAAAAAAAAAAAAAAAA
-      ddddddddddddddddddddddddd{5, 5, "ff"};
+  LevelOneNamespace::LevelTwoNamespace::AAAAAAAAAAAAAAAAAAAA ddddddddddddddddddddddddd{5, 5, "ff"};
   b.notInline(ddddddddddddddddddddddddd);
   // SpaceAfterCStyleCast, AllowAllArgumentsOnNextLine
-  cout << (bool)b.myFunction(aaaaaaaaaaaaaaaaaaa, bbbbbbbbbbb, ppppppppppp,
-                             eeeee, 0);
+  cout << (bool)b.myFunction(aaaaaaaaaaaaaaaaaaa, bbbbbbbbbbb, ppppppppppp, eeeee, 0);
 
   return 0;
 }
